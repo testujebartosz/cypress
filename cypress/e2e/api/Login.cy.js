@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import {register} from "../../requests/register.api";
-import {getRandomUser} from "../../generator/usergenerator";
+import {getRandomUser} from "../../generator/userGenerator";
 
 describe('Login to app', () => {
     beforeEach(() => {

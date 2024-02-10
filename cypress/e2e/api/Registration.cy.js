@@ -1,4 +1,4 @@
-import {getRandomUser} from "../../generator/usergenerator";
+import {getRandomUser} from "../../generator/userGenerator";
 import {register} from "../../requests/register.api";
 
 describe('Create user', () => {
