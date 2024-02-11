@@ -1,15 +1,25 @@
 import {getRandomUser} from "../../generator/userGenerator";
 import {register} from "../../requests/register.api";
+import {deleteUser} from "../../requests/deleteUser.api";
+import {login} from "../../requests/login.api";
 
 describe('Create user', () => {
+
+    let user;
     beforeEach(() => {
+        user = getRandomUser();
+    })
+
+    afterEach(() => {
+        login(user);
+        deleteUser(user.username);
     })
 
     it('successful registration', () => {
         cy.api({
             method: 'POST',
             url: 'http://localhost:4001/users/signup',
-            body: getRandomUser()
+            body: user
         }).then((response) => {
             expect(response.status).to.eq(201);
         })
@@ -17,7 +27,6 @@ describe('Create user', () => {
 
     it('unsuccessful registration', () => {
         // given
-        const user = getRandomUser();
         register(user)
 
         // when + // then

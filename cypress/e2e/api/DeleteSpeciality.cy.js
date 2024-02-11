@@ -3,7 +3,7 @@ import {register} from "../../requests/register.api";
 import {login} from "../../requests/login.api";
 import {createSpeciality, getSpeciality} from "../../requests/specialities.api";
 
-describe('Create a new speciality', () => {
+describe('Delete speciality', () => {
     beforeEach(() => {
     })
 

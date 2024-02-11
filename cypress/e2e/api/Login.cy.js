@@ -1,11 +1,9 @@
 /// <reference types="cypress" />
 import {register} from "../../requests/register.api";
 import {getRandomUser} from "../../generator/userGenerator";
+import {deleteUser} from "../../requests/deleteUser.api";
 
 describe('Login to app', () => {
-    beforeEach(() => {
-    })
-
     it('successful login', () => {
         // given
         const user = getRandomUser();
@@ -22,6 +20,9 @@ describe('Login to app', () => {
         }).then((response) => {
             expect(response.status).to.eq(200);
         })
+
+        // clean up
+        deleteUser(user.username)
     })
 
     it('unsuccessful login', () => {
