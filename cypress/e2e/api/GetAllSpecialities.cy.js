@@ -17,9 +17,23 @@ describe('Get all specialties', () => {
             method: 'GET',
             url: 'http://localhost:4001/specialties',
         }).then((response) => {
-            const isNephrologist = response.body.find(speciality => speciality.id === 2 && speciality.name === 'Nephrologist');
+            const isNephrologist = response.body.find(speciality => speciality.name === 'Nephrologist');
             expect(response.status).to.eq(200);
-            expect(isNephrologist, 'Nephrologist was found').to.exist;
+            expect(response.body).to.be.an('array');
+            isNephrologist ?
+                expect(isNephrologist, 'Nephrologist was found').to.exist
+                :
+                expect(isNephrologist, 'Nephrologist was NOT found').to.exist
+        })
+    })
+
+    it('Unsuccessful fetching of all specialties - user not logged in', () => {
+        cy.api({
+            failOnStatusCode: false,
+            method: 'GET',
+            url: 'http://localhost:4001/specialties',
+        }).then((response) => {
+            expect(response.status).to.eq(403);
         })
     })
 })

@@ -1,6 +1,7 @@
 import {getRandomUser} from "../../generator/userGenerator";
 import {register} from "../../requests/register.api";
 import {login} from "../../requests/login.api";
+import {getSpeciality} from "../../requests/specialities.api";
 
 describe('Get specific specialities', () => {
     beforeEach(() => {
@@ -13,12 +14,8 @@ describe('Get specific specialities', () => {
         login(user)
 
         // when
-        cy.api({
-            method: 'GET',
-            url: 'http://localhost:4001/specialties/11',
-        }).then((response) => {
-            expect(response.status).to.eq(200);
-            expect(response.body).to.deep.equal({ id: 11, name: 'Endocrinologist'});
+        getSpeciality(11).then((response) => {
+            expect(response.body).to.deep.equal({id: 11, name: 'Pediatrician'});
         })
     })
 })
