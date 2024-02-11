@@ -1,4 +1,4 @@
-import {getRandomUser} from "../../generator/userGenerator";
+import {getRandomAdmin} from "../../generator/userGenerator";
 import {register} from "../../requests/register.api";
 import {login} from "../../requests/login.api";
 import {getSpeciality} from "../../requests/specialities.api";
@@ -9,7 +9,7 @@ describe('Get specific specialities', () => {
 
     it('Should get specific speciality with valid token', () => {
         // given
-        const user = getRandomUser();
+        const user = getRandomAdmin();
         register(user)
         login(user)
 

@@ -1,11 +1,22 @@
 export const login = (user) => {
+    loginWithBody({
+        username: user.username,
+        password: user.password
+    })
+}
+
+export const loginAdmin = () => {
+    loginWithBody({
+        username: 'admin',
+        password: 'admin'
+    })
+}
+
+const loginWithBody = (body) => {
     cy.api({
         method: 'POST',
         url: 'http://localhost:4001/users/signin',
-        body: {
-            username: user.username,
-            password: user.password
-        }
+        body: body
     }).then((response) => {
         expect(response.status).to.eq(200);
     })

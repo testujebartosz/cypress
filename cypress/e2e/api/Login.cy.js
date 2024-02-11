@@ -1,12 +1,12 @@
 /// <reference types="cypress" />
 import {register} from "../../requests/register.api";
-import {getRandomUser} from "../../generator/userGenerator";
+import {getRandomAdmin} from "../../generator/userGenerator";
 import {deleteUser} from "../../requests/deleteUser.api";
 
 describe('Login to app', () => {
     it('successful login', () => {
         // given
-        const user = getRandomUser();
+        const user = getRandomAdmin();
         register(user)
 
         // when

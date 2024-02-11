@@ -1,4 +1,4 @@
-import {getRandomUser} from "../../generator/userGenerator";
+import {getRandomAdmin} from "../../generator/userGenerator";
 import {register} from "../../requests/register.api";
 import {deleteUser} from "../../requests/deleteUser.api";
 import {login} from "../../requests/login.api";
@@ -7,7 +7,7 @@ describe('Create user', () => {
 
     let user;
     beforeEach(() => {
-        user = getRandomUser();
+        user = getRandomAdmin();
     })
 
     afterEach(() => {
