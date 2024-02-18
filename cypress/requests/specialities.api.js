@@ -20,3 +20,13 @@ export const createSpeciality = (specialityName) => {
         return response;
     })
 }
+
+export const getAllSpeciality = () => {
+    return cy.api({
+        method: 'GET',
+        url: 'http://localhost:4001/specialties'
+    }).then((response) => {
+        expect(response.status).to.eq(200);
+        return response;
+    })
+}
