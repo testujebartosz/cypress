@@ -15,7 +15,7 @@ describe('Delete speciality', () => {
 
         // when
         createSpeciality('TestSpeciality').then((response) => {
-            const specialtyId = response.body.id
+            const specialtyId = response.body.id;
             expect(response.body).to.have.property('id').and.be.a('number');
 
             cy.api({
