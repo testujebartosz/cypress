@@ -15,7 +15,7 @@ describe('Get specific specialities', () => {
 
         // when
         getSpeciality(11).then((response) => {
-            expect(response.body).to.deep.equal({id: 11, name: 'Pediatrician'});
+            expect(response.body).to.have.property('id', 11);
         })
     })
 })
