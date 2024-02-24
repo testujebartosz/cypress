@@ -33,13 +33,12 @@ describe('Get available slots', () => {
         // when
         getSpeciality(idToQuery).then(specialtyResponse => {
             getAllUsers().then((getAllUsersResponse) => {
-                const filteredUsers = getAllUsersResponse.body.filter((user) => user.specialties.length > 0 && user.specialties[0].id === idToQuery);
-                if (filteredUsers.length > 0) {
-                    const userToPass = filteredUsers[0]; 
-                    cy.wrap(userToPass).then(user => {
-                        getSlot(queryParams).then((slotsResponse) => assertSlots(slotsResponse.body, specialtyResponse.body, user))
-                    });
-                }
+                const userToPass = getAllUsersResponse.body.find((user) => user.specialties.length > 0 && user.specialties[0].id === idToQuery);
+                cy.wrap(userToPass).then(user => {
+                    getSlot(queryParams).then((slotsResponse) => {
+                        assertSlots(slotsResponse.body, specialtyResponse.body, user)
+                    })
+                });
             })
         })
     })
