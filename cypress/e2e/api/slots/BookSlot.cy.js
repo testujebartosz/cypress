@@ -1,8 +1,8 @@
-import {getRandomClient} from "../../generator/userGenerator";
-import {register} from "../../requests/register.api";
-import {login, loginAdmin} from "../../requests/login.api";
-import {deleteUser} from "../../requests/deleteUser.api";
-import {getSlot} from "../../requests/getSlot.api";
+import {getRandomClient} from "../../../generator/userGenerator";
+import {register} from "../../../requests/register.api";
+import {login, loginAdmin} from "../../../requests/login.api";
+import {deleteUser} from "../../../requests/deleteUser.api";
+import {getSlot} from "../../../requests/getSlot.api";
 
 describe('Book a slot', () => {
     let user;

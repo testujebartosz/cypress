@@ -1,6 +1,6 @@
-import {getRandomAdmin} from "../../generator/userGenerator";
-import {register} from "../../requests/register.api";
-import {login} from "../../requests/login.api";
+import {getRandomAdmin} from "../../../generator/userGenerator";
+import {register} from "../../../requests/register.api";
+import {login} from "../../../requests/login.api";
 
 describe('Get all specialties', () => {
     beforeEach(() => {

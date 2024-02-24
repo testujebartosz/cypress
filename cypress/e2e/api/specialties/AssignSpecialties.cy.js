@@ -1,8 +1,8 @@
-import {getRandomDoctor} from "../../generator/userGenerator";
-import {register} from "../../requests/register.api";
-import {login} from "../../requests/login.api";
-import {getAllSpeciality} from "../../requests/specialities.api";
-import {drawTwoRandomIds} from "../../utils/ranodm.array";
+import {getRandomDoctor} from "../../../generator/userGenerator";
+import {register} from "../../../requests/register.api";
+import {login} from "../../../requests/login.api";
+import {getAllSpeciality} from "../../../requests/specialities.api";
+import {drawTwoRandomIds} from "../../../utils/ranodm.array";
 
 describe('Assign specialties', () => {
 

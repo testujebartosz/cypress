@@ -1,9 +1,9 @@
-import {getRandomAdmin, getRandomClient} from "../../generator/userGenerator";
-import {register} from "../../requests/register.api";
-import {login, loginAdmin} from "../../requests/login.api";
-import {createSpeciality, getSpeciality} from "../../requests/specialities.api";
-import {deleteUser} from "../../requests/deleteUser.api";
-import {getRandomSpeciality} from "../../generator/specialityGenerator";
+import {getRandomAdmin, getRandomClient} from "../../../generator/userGenerator";
+import {register} from "../../../requests/register.api";
+import {login, loginAdmin} from "../../../requests/login.api";
+import {createSpeciality, getSpeciality} from "../../../requests/specialities.api";
+import {deleteUser} from "../../../requests/deleteUser.api";
+import {getRandomSpeciality} from "../../../generator/specialityGenerator";
 
 describe('Create a new speciality', () => {
 

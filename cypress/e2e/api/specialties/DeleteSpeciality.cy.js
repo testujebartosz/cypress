@@ -1,7 +1,7 @@
-import {getRandomAdmin} from "../../generator/userGenerator";
-import {register} from "../../requests/register.api";
-import {login} from "../../requests/login.api";
-import {createSpeciality, getSpeciality} from "../../requests/specialities.api";
+import {getRandomAdmin} from "../../../generator/userGenerator";
+import {register} from "../../../requests/register.api";
+import {login} from "../../../requests/login.api";
+import {createSpeciality, getSpeciality} from "../../../requests/specialities.api";
 
 describe('Delete speciality', () => {
     beforeEach(() => {
