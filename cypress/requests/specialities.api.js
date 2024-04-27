@@ -30,3 +30,15 @@ export const getAllSpeciality = () => {
         return response;
     })
 }
+
+export const assignSpeciality = (id) => {
+    return cy.api({
+        method: 'PUT',
+        url: 'http://localhost:4001/users/specialties',
+        body: {
+            specialtyIds: id
+        }
+    }).then((response) => {
+        expect(response.status).to.eq(200);
+    })
+}
