@@ -12,6 +12,13 @@ export const loginAdmin = () => {
     })
 }
 
+export const loginDoctor = () => {
+    loginWithBody({
+        username: 'doctor',
+        password: 'doctor'
+    })
+}
+
 const loginWithBody = (body) => {
     cy.api({
         method: 'POST',
