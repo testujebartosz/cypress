@@ -10,7 +10,7 @@ export const generateDateDaysAheadWithSpecificHour = (daysAhead, hour) => {
     let year = futureDate.getFullYear();
     let month = String(futureDate.getMonth() + 1).padStart(2, '0'); 
     let day = String(futureDate.getDate()).padStart(2, '0'); 
-    let hourFormatted = String(futureDate.getHours()).padStart(2, '0');
+    let formattedHour = String(futureDate.getHours()).padStart(2, '0');
 
-    return `${year}-${month}-${day}T${hourFormatted}:00:00`;
+    return `${year}-${month}-${day}T${formattedHour}:00:00`;
 }
